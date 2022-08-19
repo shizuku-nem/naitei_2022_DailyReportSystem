@@ -63,11 +63,7 @@
 		</property>
 
 		<!-- annotated classes -->
-		<property name="annotatedClasses">
-			<list>
-					<value>trainingManagementSystem.model.User</value>
-			</list>
-		</property>
+		<property name="packagesToScan" value="trainingManagementSystem.model"/>
 
 	</bean>
 
