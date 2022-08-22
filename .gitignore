@@ -3,6 +3,7 @@
 
 # Server
 /apache*/
+/Servers/**
 
 # Log file
 *.log

@@ -13,11 +13,11 @@
     <meta content="" name="description">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="<c:url value="/assets/users/css/bootstrap.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/assets/common/css/bootstrap.min.css"/>" rel="stylesheet">
 
     <!-- Template Stylesheet -->
 
-    <link href="<c:url value="/assets/users/css/style.css"/>" rel="stylesheet">
+    <link href="<c:url value="/assets/common/css/style.css"/>" rel="stylesheet">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,8 +29,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="<c:url value="/assets/users-components/lib/owlcarousel/assets/owl.carousel.min.css"/>" rel="stylesheet">
-    <link href="<c:url value="/assets/users-components/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/assets/common/lib/owlcarousel/assets/owl.carousel.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/assets/common/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"/>" rel="stylesheet">
 <head/>
 
 <div class="container-fluid position-relative d-flex p-0">
@@ -45,12 +45,12 @@
 <div>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="<c:url value="/assets/users/lib/easing/easing.min.js"/>"></script>
-	<script src="<c:url value="/assets/users/lib/waypoints/waypoints.min.js"/>"></script>
-	<script src="<c:url value="/assets/users/lib/owlcarousel/owl.carousel.min.js"/>"></script>
-	<script src="<c:url value="/assets/users/lib/tempusdominus/js/moment.min.js"/>"></script>
-	<script src="<c:url value="/assets/users/lib/tempusdominus/js/moment-timezone.min.js"/>"></script>
-	<script src="<c:url value="/assets/users/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"/>"></script>
-	<script src="<c:url value="/assets/users/js/main.js"/>"></script>
+	<script src="<c:url value="/assets/common/lib/easing/easing.min.js"/>"></script>
+	<script src="<c:url value="/assets/common/lib/waypoints/waypoints.min.js"/>"></script>
+	<script src="<c:url value="/assets/common/lib/owlcarousel/owl.carousel.min.js"/>"></script>
+	<script src="<c:url value="/assets/common/lib/tempusdominus/js/moment.min.js"/>"></script>
+	<script src="<c:url value="/assets/common/lib/tempusdominus/js/moment-timezone.min.js"/>"></script>
+	<script src="<c:url value="/assets/common/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"/>"></script>
+	<script src="<c:url value="/assets/common/js/main.js"/>"></script>
 	
 </div>
