@@ -4,6 +4,8 @@
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="baseURL" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +17,16 @@
 	<div class="container mt-3">
 		<h1>${message}</h1>
 		<h1>Add User Form</h1>
-		<form:form action="users/create" method="POST" modelAttribute="user">
+		<form:form action="${baseURL}/users/create" method="POST" modelAttribute="user">
 			<form:hidden path="id" />
+			<form:label path="name">Name:</form:label>
 			<form:input path="name" />
+			<form:label path="email">Email:</form:label>
+			<form:input path="email" />
+			<form:label path="role">Role:</form:label>
+			<form:input path="role" />
+			<form:label path="division.id">Division ID:</form:label>
+			<form:input path="division.id" />
 			<input type="submit" value="Submit" />
 		</form:form>
 	</div>
