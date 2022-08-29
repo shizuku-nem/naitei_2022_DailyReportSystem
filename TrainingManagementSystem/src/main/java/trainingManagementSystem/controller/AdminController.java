@@ -2,6 +2,7 @@ package trainingManagementSystem.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,9 +40,7 @@ public class AdminController {
 		model.addAttribute("getDivisionById", divisionService.getById(id));
 		return "admins/getUsersOfDivision";
 	}
-
 	// Add a Division
-
 	@RequestMapping(value = { "/admin/divisions/create" }, method = RequestMethod.POST)
 	public String saveDivision(ModelMap model, @ModelAttribute("division") Division division) {
 		division.setManager(userServices.getById(division.getManager().getId(), null));
@@ -54,9 +53,29 @@ public class AdminController {
 	@RequestMapping(value = { "/admin/divisions/remove" })
 	public String RemoveDivision(@RequestParam int id, @ModelAttribute("division") Division division) {
 		divisionService.getById(id);
-		divisionService.deleteDivision(id); 
+		divisionService.deleteDivision(id);
 		return "redirect:/admin";
 
 	}
+	
+	// Edit a Division
+	@RequestMapping(value = { "/admin/divisions/edit"})
+	public String EditDivision(@RequestParam int id, ModelMap model) {
+		model.addAttribute("loadUsersNotinManagerID", userServices.loadUsersNotinManagerID());
+		model.addAttribute("currentManager", divisionService.getById(id).getManager());
+		model.addAttribute("division", divisionService.getById(id));
+		return "admins/editDivision";
+
+	}
+	
+	// Save Edit Division
+	@RequestMapping(value = { "/admin/divisions/save" }, method = RequestMethod.POST)
+	public String SaveDivision(@ModelAttribute("division") Division division, ModelMap model) {
+		division.setManager(userServices.getById(division.getManager().getId(), null));
+		divisionService.updateDivision(division);
+		return "redirect:/admin";
+	}
+
+	
 
 }

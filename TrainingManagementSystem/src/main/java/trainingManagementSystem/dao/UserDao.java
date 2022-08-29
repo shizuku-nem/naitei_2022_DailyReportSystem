@@ -50,8 +50,6 @@ public class UserDao {
 		hibernateTemplate.update(user);
 	}
 
-	
-	// Get users (role = 1) in a division
 	public List<User> getUserByDivisionId(int divisionId) {
 		Session session = hibernateTemplate.getSessionFactory().openSession();
 //		CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
@@ -62,11 +60,11 @@ public class UserDao {
 //		selectQuery = selectQuery.where(criteriaBuilder.equal(root.get("role"), 1));
 //		TypedQuery<User> typedQuery = session.createQuery(selectQuery);
 //		List<User> users = typedQuery.getResultList();
-		
-		Query<User> query = session.createNativeQuery("select * from users u where u.divisionId= :divisionId and role=1", User.class);
+
+		Query<User> query = session
+				.createNativeQuery("select * from users u where u.divisionId= :divisionId and role=1", User.class);
 		query.setParameter("divisionId", divisionId);
 		List<User> users = query.list();
-		
 		session.close();
 		return users;
 	}
@@ -132,7 +130,7 @@ public class UserDao {
 			Query<User> query = session.createNativeQuery("select * from users u where u.divisionId is null and role=1",
 					User.class);
 			List<User> users = query.list();
-			
+
 			session.close();
 			return users;
 		} catch (Exception e) {
